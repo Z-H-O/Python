@@ -33,7 +33,7 @@ for start_num in range(1,6,4):
     s=requests.session()
 
     #获取cookie
-    s.cookies=cj.LWPCookieJar('D:\\PaChong\\cookies')
+    s.cookies=cj.LWPCookieJar('D:\\PaChong\\data_pull_text\\cookies')
     s.cookies.load(ignore_discard=True, ignore_expires=True)
 
     #获取登录页面
@@ -44,7 +44,7 @@ for start_num in range(1,6,4):
         print('网页请求失败,失败码为：',res.status_code,'请重新填写Header或登录信息')
 
     #cookie保存
-    s.cookies.save('D:\\PaChong\\cookies')
+    s.cookies.save('data_pull_text\cookies')
 
     # 检测网页内容的编码
     encoding = chardet.detect(res.content)['encoding']
